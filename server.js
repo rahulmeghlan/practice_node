@@ -9,9 +9,10 @@ function start(route, handle){
 		console.log("Request for : " + pathname + " received.");
 		
 		response.writeHead(200, {"Content-Type" : "text/plain"});
-		var content = route(handle, pathname);
-		response.write(content);
-		response.end();
+		// var content = route(handle, pathname, response);
+		route(handle, pathname, response);
+		// response.write(content);
+		// response.end();
 	}
 	
 	http.createServer(onRequest).listen(8888);
