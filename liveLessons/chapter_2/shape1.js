@@ -6,9 +6,6 @@
  * To change this template use File | Settings | File Templates.
  */
 function Shape() {
-    this.distance_from_origin = function () {
-        return Math.sqrt(this.X * this.X + this.Y * this.Y);
-    }
 }
 
 Shape.prototype.X = 0;
@@ -29,6 +26,7 @@ Shape.prototype.area = function(){
 
 
 function Square(){
+
 }
 
 Square.prototype = new Shape();
@@ -38,6 +36,8 @@ Square.prototype.Width = 0;
 Square.prototype.area = function(){
     return this.Width * this.Width;
 }
+
+var sq = new Square();
 
 function Rectangle(){}
 
