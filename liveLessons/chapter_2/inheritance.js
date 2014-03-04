@@ -5,25 +5,26 @@
  * Time: 1:52 PM
  * To change this template use File | Settings | File Templates.
  */
-function a() {
+function a(){
 
 }
 
-a.prototype.area = function () {
+a.prototype.area = function(){
     console.log("from A");
 }
 
-function b() {
+function b(){
 
 }
 
+b.prototype.__proto__ = a.prototype;
 
-b.prototype.area = function () {
+b.prototype.area = function(){
     /*var temp = new a();
      temp.area();*/
-    b.prototype.__proto__ = a.prototype;
+//    console.log(this.__proto__.area());
     console.log(b.prototype.__proto__.area());
-    console.log("from B")
+    console.log("from B");
 }
 
 var c = new b();
