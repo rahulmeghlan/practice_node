@@ -5,6 +5,7 @@ var http = require('http'),
     fs = require('fs'),
     path = require('path'),
     mime = require('mime'),
+    testModule = require('testModule'),
     cache = {};
 
 function send404(response) {
@@ -53,5 +54,5 @@ var server = http.createServer(function(req, res){
 });
 
 server.listen(8080, function(){
-   console.log("server listening on port 8080");
+   console.log(testModule.testContent);
 });
