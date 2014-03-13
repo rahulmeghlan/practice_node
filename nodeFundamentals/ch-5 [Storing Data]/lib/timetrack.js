@@ -74,7 +74,7 @@ exports.archive = function (db, req, res) {
 
 exports.show = function (db, res, showArchived) {
     var query = "SELECT * FROM work";
-//        "WHERE archived=?" +
+//        "WHERE archived=? " +
 //        "ORDER BY date DESC";
     var archiveValue = (showArchived) ? 1 : 0;
 
