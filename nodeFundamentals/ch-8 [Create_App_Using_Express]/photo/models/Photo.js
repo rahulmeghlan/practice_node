@@ -2,7 +2,8 @@
  * Created by Rahul on 3/24/14.
  */
 var mongoose = require('mongoose');
-mongoose.connect('mongodb:localhost/photo_app');
+var uri = 'mongodb://localhost/photo_app';
+mongoose.connect(uri);
 
 var schema = new mongoose.Schema({
     name: String,

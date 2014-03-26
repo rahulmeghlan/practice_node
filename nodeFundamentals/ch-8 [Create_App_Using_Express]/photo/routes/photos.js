@@ -5,6 +5,7 @@
 var photo = require('../models/Photo');
 var path = require('path');
 var fs = require('fs');
+var mv = require('mv');
 var join = path.join;
 
 exports.submit = function (dir) {
@@ -13,7 +14,7 @@ exports.submit = function (dir) {
         var name = req.body.photo.name || img.name;
         var path = join(dir, img.name);
 
-        fs.rename(img.path, path, function (err) {
+        mv(img.path, path, function (err) {
             if (err) return next(err);
 
             photo.create({
